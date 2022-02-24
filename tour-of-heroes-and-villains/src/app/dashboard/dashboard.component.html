@@ -1,0 +1,19 @@
+<h2>Top Heroes</h2>
+<div class="heroes-menu">
+  <a *ngFor="let hero of heroes"
+      routerLink="/detail-hero/{{hero.id}}">
+      {{hero.name}}
+  </a>
+</div>
+
+<app-hero-search></app-hero-search>
+
+<h2>Top Villains</h2>
+<div class="villains-menu">
+  <a *ngFor="let villain of villains"
+      routerLink="/detail-villain/{{villain.id}}">
+      {{villain.name}}
+  </a>
+</div>
+
+<app-villain-search></app-villain-search>

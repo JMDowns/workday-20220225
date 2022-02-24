@@ -1,0 +1,27 @@
+<p>You have pitted {{this.selectedHero ? this.selectedHero.name : "no one"}} against {{this.selectedVillain ? this.selectedVillain.name : "no one"}}. </p>
+<p>Press the button below to lock them in a mighty battle!</p>
+<p>{{this.battleString}}</p>
+<button (click)="simulateBattle()">Battle</button>
+
+<div id="search-hero">
+    <label for="search-box-hero">Hero Search</label>
+    <input #searchBoxHero id="search-box-hero" (input)="searchHero(searchBoxHero.value)" />
+  
+    <ul class="search-result">
+      <li *ngFor="let hero of heroes$ | async" >
+        <button (click)="addHero(hero)">{{hero.name}}</button>
+      </li>
+    </ul>
+</div>
+
+  <div id="search-villain">
+    <label for="search-box-villain">Villain Search</label>
+    <input #searchBoxVillain id="search-box-villain" (input)="searchVillain(searchBoxVillain.value)" />
+  
+    <ul class="search-result-villain">
+      <li *ngFor="let villain of villains$ | async" >
+        <button (click)="addVillain(villain)">{{villain.name}}</button>
+      </li>
+    </ul>
+  </div>
+
